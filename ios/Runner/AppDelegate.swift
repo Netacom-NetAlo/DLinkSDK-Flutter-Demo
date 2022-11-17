@@ -36,6 +36,11 @@ import NADomain
         
         onReceiveChannel()
         GeneratedPluginRegistrant.register(with: self)
+                
+        // Optional use notification
+        self.netAloFull.requestNotificationtPermission()
+        UNUserNotificationCenter.current().delegate = self
+        
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
@@ -155,19 +160,55 @@ import NADomain
     
 }
 
-//MARK: - NOTIFICATION
+
 extension AppDelegate {
-        public override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-            super.userNotificationCenter(center, willPresent: notification, withCompletionHandler: completionHandler)
+    // MARK: - AppDelegateViewModelOutputs
     
-            self.netAloFull.userNotificationCenter(center, willPresent: notification, withCompletionHandler: completionHandler)
-        }
+    override func applicationDidBecomeActive(_ application: UIApplication) {
+        self.netAloFull.applicationDidBecomeActive(application)
+    }
+
+    override func applicationWillResignActive(_ application: UIApplication) {
+        self.netAloFull.applicationWillResignActive(application)
+    }
+
+    override func applicationWillTerminate(_ application: UIApplication) {
+        self.netAloFull.applicationWillTerminate(application)
+    }
+
+    override func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        self.netAloFull.application(application, supportedInterfaceOrientationsFor: window)
+    }
+
+    // UserActivity
+    override func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        self.netAloFull.application(application, continue: userActivity, restorationHandler: restorationHandler)
+    }
+
+    //MARK: - NOTIFICATION
+    override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        self.netAloFull.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
     
-        public override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-            super.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    override func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        self.netAloFull.application(application, open: url, sourceApplication: sourceApplication, annotation: application)
+    }
+
+    override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        self.netAloFull.application(app, open: url, options: options)
+    }
     
-            self.netAloFull.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
-        }
+    public override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        super.userNotificationCenter(center, willPresent: notification, withCompletionHandler: completionHandler)
+
+        self.netAloFull.userNotificationCenter(center, willPresent: notification, withCompletionHandler: completionHandler)
+    }
+
+    public override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        super.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+
+        self.netAloFull.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    }
     
 }
 
