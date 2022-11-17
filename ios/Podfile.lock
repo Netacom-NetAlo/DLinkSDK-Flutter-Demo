@@ -1,0 +1,107 @@
+PODS:
+  - Flutter (1.0.0)
+  - InputBarAccessoryView (4.3.3):
+    - InputBarAccessoryView/Core (= 4.3.3)
+  - InputBarAccessoryView/Core (4.3.3)
+  - Kingfisher (7.3.2)
+  - lottie-ios (3.3.0)
+  - MessageKit (3.1.0):
+    - InputBarAccessoryView (~> 4.3.0)
+  - NetacomSDKs (0.1.2):
+    - Kingfisher (= 7.3.2)
+    - lottie-ios (= 3.3.0)
+    - XCoordinator (~> 2.0)
+  - NotificationSDK (0.1.2):
+    - RealmSwift (= 10.12.0)
+    - Socket.IO-Client-Swift (= 15.2.0)
+    - ZIPFoundation (~> 0.9)
+  - Realm (10.12.0):
+    - Realm/Headers (= 10.12.0)
+  - Realm/Headers (10.12.0)
+  - RealmSwift (10.12.0):
+    - Realm (= 10.12.0)
+  - Resolver (1.4.4)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
+  - WebRTC (3.3.0)
+  - XCoordinator (2.2.0):
+    - XCoordinator/Core (= 2.2.0)
+  - XCoordinator/Core (2.2.0)
+  - ZIPFoundation (0.9.15)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - MessageKit (from `https://github.com/Netacom-NetAlo/Messagekit-iOS`, branch `main`)
+  - NetacomSDKs (from `https://github.com/Netacom-NetAlo/NetaloSDKs-iOS`, tag `0.1.2`)
+  - NotificationSDK (from `https://github.com/Netacom-NetAlo/NotiSDKs-iOS`, tag `0.1.2`)
+  - Resolver (from `https://github.com/Netacom-NetAlo/Resolver-iOS`)
+  - WebRTC (from `https://github.com/Netacom-NetAlo/WebRTC-iOS`, branch `main`)
+
+SPEC REPOS:
+  trunk:
+    - InputBarAccessoryView
+    - Kingfisher
+    - lottie-ios
+    - Realm
+    - RealmSwift
+    - Socket.IO-Client-Swift
+    - Starscream
+    - XCoordinator
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  MessageKit:
+    :branch: main
+    :git: https://github.com/Netacom-NetAlo/Messagekit-iOS
+  NetacomSDKs:
+    :git: https://github.com/Netacom-NetAlo/NetaloSDKs-iOS
+    :tag: 0.1.2
+  NotificationSDK:
+    :git: https://github.com/Netacom-NetAlo/NotiSDKs-iOS
+    :tag: 0.1.2
+  Resolver:
+    :git: https://github.com/Netacom-NetAlo/Resolver-iOS
+  WebRTC:
+    :branch: main
+    :git: https://github.com/Netacom-NetAlo/WebRTC-iOS
+
+CHECKOUT OPTIONS:
+  MessageKit:
+    :commit: d5d13370ae47c42f432d933d12f5c492743ed450
+    :git: https://github.com/Netacom-NetAlo/Messagekit-iOS
+  NetacomSDKs:
+    :git: https://github.com/Netacom-NetAlo/NetaloSDKs-iOS
+    :tag: 0.1.2
+  NotificationSDK:
+    :git: https://github.com/Netacom-NetAlo/NotiSDKs-iOS
+    :tag: 0.1.2
+  Resolver:
+    :commit: 0a0399b29e1c9a3fd93658cddd58a88fb4e055ab
+    :git: https://github.com/Netacom-NetAlo/Resolver-iOS
+  WebRTC:
+    :commit: 5235bdd0c48c197301dedda55ed6fb63535b8541
+    :git: https://github.com/Netacom-NetAlo/WebRTC-iOS
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  InputBarAccessoryView: 8e7fc09e9cba75e0fee5da13450e15c194806f69
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
+  MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
+  NetacomSDKs: e42b860a24909ae40f7e623820aca2a14b884f9e
+  NotificationSDK: ed97d25fee5a0e3210ee007b00e7f181dff491ed
+  Realm: 32488213acb44660539c619d620cec1bac046166
+  RealmSwift: 0abdca6231d5ff8a4f84cef9c1121ef95a483faf
+  Resolver: fc42cde63baab77c70d0e3c9538f44d978bb3744
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  WebRTC: dc02454e9969ae0df8de1094e5a4bd7dbcc083b7
+  XCoordinator: a5f91e43ee944f508529763921165697d3211629
+  ZIPFoundation: 063163dc828bf699c5be160eb4f58f676322d94f
+
+PODFILE CHECKSUM: 14f48da5b6004597c8e14a221dd6915615b259b0
+
+COCOAPODS: 1.11.3
