@@ -18,6 +18,7 @@ import NADomain
     private lazy var mainWindow = UIWindow(frame: UIScreen.main.bounds)
     
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         self.netAloFull = NetAloFullManager(config: BuildConfig.config)
         
         // Only show SDK after start success, Waiting maximun 10s
@@ -93,7 +94,7 @@ import NADomain
     }
     
     private func openChatConversation(result: FlutterResult?) -> Void {
-        self.netAloFull.showVNDemoVC() { err in
+        self.netAloFull.showListGroup { err in
             result?(true)
         }
     }
@@ -177,7 +178,10 @@ extension AppDelegate {
     }
 
     override func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        self.netAloFull.application(application, supportedInterfaceOrientationsFor: window)
+        if self.netAloFull != nil {
+            return self.netAloFull.application(application, supportedInterfaceOrientationsFor: window)
+        }
+        return .portrait
     }
 
     // UserActivity
