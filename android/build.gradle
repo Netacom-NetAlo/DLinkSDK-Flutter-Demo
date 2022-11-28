@@ -2,7 +2,7 @@ buildscript {
     ext {
         kotlinVersion = '1.6.21'
         hiltVersion = "2.42"
-        sdkNetAloVersion = "3.1.36"
+        sdkNetAloVersion = "3.1.37"
     }
     repositories {
         google()
@@ -29,6 +29,9 @@ allprojects {
         mavenLocal()
         maven {
             url("https://jitpack.io")
+        }
+        maven{
+            url("https://github.com/Netacom-NetAlo/NetaloSDKs-Android/raw/main/NetAloSDK")
         }
     }
 }
