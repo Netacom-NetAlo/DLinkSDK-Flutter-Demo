@@ -28,6 +28,7 @@ struct BuildConfig {
                 allowSetUserProfileUrl: false,
                 allowEnableLocationFeature: false,
                 allowTrackingUsingSDK: true,
+                allowTrackingBadgeNumber: true,
                 isHiddenEditProfile: true,
                 allowAddNewContact: false
             ),
