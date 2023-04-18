@@ -153,6 +153,8 @@ class MainActivity : FlutterActivity(), CoroutineScope {
                 "checkPermissionCall" -> {}
                 "setDomainLoadAvatarNetAloSdk" -> setDomainLoadAvatarNetAloSdk(call, result)
                 "sendMessage" -> sendMessage(call, result)
+                "onFirebaseReceivedChat" -> onFirebaseReceivedChat(call)
+                "onFirebaseReceivedCall" -> onFirebaseReceivedCall(call)
                 "closeNetAloChat" -> closeNetAloChat()
             }
         }
@@ -266,6 +268,15 @@ class MainActivity : FlutterActivity(), CoroutineScope {
             )
         )
         result.success(true)
+    }
+    private fun onFirebaseReceivedChat(call: MethodCall) {
+        val fcmPayLoad = call.argument("fcmPayLoad") as? String ?: ""
+        NetAloSDK.onFirebaseReceivedChat(context = this, fcmPayload = fcmPayLoad)
+    }
+
+    private fun onFirebaseReceivedCall(call: MethodCall) {
+        val fcmPayLoad = call.argument("fcmPayLoad") as? String ?: ""
+        NetAloSDK.onFirebaseReceivedCall(context = this, fcmPayload = fcmPayLoad)
     }
 
     private fun closeNetAloChat() {
